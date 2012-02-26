@@ -30,34 +30,61 @@ buffer.toString(); // hello world!!!
 
 ## API
 
-# new BufferBuilder([initialCapacity])
+### new BufferBuilder([initialCapacity])
 Allocate an empty BufferBuilder. If you know approximately what size the Buffer will end up being and are trying to squeeze out more performance, you can set the initial size of the backing buffer.
 
-# appendBuffer(source)
+### appendBuffer(source)
 
-# appendUInt8(value)
-# appendUInt16LE(value)
-# appendUInt16BE(value)
-# appendUInt32LE(value)
-# appendUInt32BE(value)
-# appendInt8(value)
-# appendInt16LE(value)
-# appendInt16BE(value)
-# appendInt32LE(value)
-# appendInt32BE(value)
-# appendFloatLE(value)
-# appendFloatBE(value)
-# appendDoubleLE(value)
-# appendDoubleBE(value)
+### appendUInt8(value)
+Append 8-bit unsigned integer.
 
-# appendFill(value, count)
+### appendUInt16LE(value)
+Append 16-bit unsigned integer, little endian. 1 is encoded as 01 00.
+
+### appendUInt16BE(value)
+Append 16-bit unsigned integer, big endian. 1 is encoded as 00 01.
+
+### appendUInt32LE(value)
+Append 32-bit unsigned integer, little endian. 1 is encoded as 01 00 00 00.
+
+### appendUInt32BE(value)
+Append 32-bit unsigned integer, big endian. 1 is encoded as 00 00 00 01.
+
+### appendInt8(value)
+Append 8-bit signed integer.
+
+### appendInt16LE(value)
+Append 16-bit signed integer, little endian. 1 is encoded as 01 00.
+
+### appendInt16BE(value)
+Append 16-bit signed integer, big endian. 1 is encoded as 00 01.
+
+### appendInt32LE(value)
+Append 32-bit signed integer, little endian. 1 is encoded as 01 00 00 00.
+
+### appendInt32BE(value)
+Append 32-bit signed integer, big endian. 1 is encoded as 00 00 00 01.
+
+### appendFloatLE(value)
+Little-endian float. Occupies 4 bytes.
+
+### appendFloatBE(value)
+Big-endian float. Occupies 4 bytes.
+
+### appendDoubleLE(value)
+Little-endian double. Occupies 8 bytes.
+
+### appendDoubleBE(value)
+Big-endian double. Occupies 8 bytes.
+
+### appendFill(value, count)
 Append _count_ repetitions of _value_ (a byte).
 
-# get()
+### get()
 Convert to a buffer. This is a deep copy; modifications to the returned buffer will not affect the BufferBuilder.
 
-# copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd])
+### copy(targetBuffer, [targetStart], [sourceStart], [sourceEnd])
 Copy bytes from the BufferBuilder into _targetBuffer_. _targetStart_ and _sourceStart_ default to 0. _sourceEnd_ defaults to the BufferBuilder's length.
 
-# length
+### length
 Number of bytes appended so far.
