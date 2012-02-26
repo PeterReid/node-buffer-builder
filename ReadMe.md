@@ -1,6 +1,6 @@
 # buffer-builder.js
 
-BufferBuilder accumulates pieces of data into a buffer, appending each onto the end. The data can be Buffers, strings, a repittion of a byte, or any of the types such as UInt32LE or FloatBE that can be written into Buffers.
+BufferBuilder accumulates pieces of data into a buffer, appending each onto the end. The data can be Buffers, strings, a repetition of a byte, or any of the types such as UInt32LE or FloatBE that can be written into Buffers.
 
 If you are thinking about using this, you should probably have considered streaming your data instead of putting it into a buffer.
 
