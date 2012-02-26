@@ -5,7 +5,7 @@
     "main" : "buffer-builder",
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/peter.d.reid/buffer-builder.git"
+        "url" : "http://github.com/PeterReid/buffer-builder.git"
     },
     "keywords" : [
         "buffer-builder", "buffer"

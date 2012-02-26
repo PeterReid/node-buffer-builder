@@ -10,7 +10,7 @@ If you are thinking about using this, you should probably have considered stream
 var BufferBuilder = require('buffer-builder');
 var helloWorld = new BufferBuilder();
 
-// Append a string, ascii encoded by default.
+// Append a string, utf8 encoded by default.
 helloWorld.appendString('hello');
 
 // Append any type that Buffer has read and write functions for.
@@ -34,6 +34,10 @@ buffer.toString(); // hello world!!!
 Allocate an empty BufferBuilder. If you know approximately what size the Buffer will end up being and are trying to squeeze out more performance, you can set the initial size of the backing buffer.
 
 ### appendBuffer(source)
+Append a buffer. Use [slice](http://nodejs.org/docs/latest/api/buffers.html#buffer.slice) if you want to append just part of one.
+
+### appendString(string, [encoding])
+Append a string, encoded by utf8 by default. No trailing 0 is appended.
 
 ### appendUInt8(value)
 Append 8-bit unsigned integer.
