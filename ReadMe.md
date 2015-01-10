@@ -39,7 +39,7 @@ Append a buffer. Use [slice](http://nodejs.org/docs/latest/api/buffers.html#buff
 ### appendString(string, [encoding])
 Append a string, encoded by utf8 by default. No trailing 0 is appended.
 
-### appendSze(string, [encoding])
+### appendStringZero(string, [encoding])
 Append a null-terminated string, encoded by utf8 by default.
 
 ### appendUInt8(value)

@@ -104,6 +104,18 @@ var BufferBuilder = require('../buffer-builder');
   assert.equal(builder.get().toString(), words.join(''));
 })();
 
+/* Test appendStringZero */
+(function() {
+  var words = ['alpha', 'bravo', 'charlie', 'delta'];
+  var builder = new BufferBuilder();
+  for (var i = 0; i < words.length; i++) {
+    builder.appendStringZero(words[i]);
+  }
+  
+  function appendZero(str) { return str + '\0'; }
+  assert.equal(builder.get().toString() , words.map(appendZero).join(''));
+})();
+
 /* copy() sanity checks */
 (function() {
   var check = function(low, high,  targetStart, sourceStart, sourceEnd) {

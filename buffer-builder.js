@@ -73,7 +73,7 @@ BufferBuilder.prototype.appendString = function(str, encoding) {
   return this.appendBuffer(new Buffer(str, encoding));
 };
 
-BufferBuilder.prototype.appendSze = function(str, encoding) {
+BufferBuilder.prototype.appendStringZero = function(str, encoding) {
   return this.appendString(str + '\0', encoding);
 }
 
