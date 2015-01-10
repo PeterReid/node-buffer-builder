@@ -1,6 +1,6 @@
 {
     "name" : "buffer-builder",
-    "version" : "0.1.0",
+    "version" : "0.2.0",
     "description" : "Build a buffer without knowing its size beforehand",
     "main" : "buffer-builder",
     "repository" : {
