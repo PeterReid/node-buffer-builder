@@ -1,11 +1,12 @@
 module.exports = BufferBuilder;
 
 function BufferBuilder(initialCapacity) {
-  initialCapacity = Math.max(1, initialCapacity || 512);  
-  this.buffers = [new Buffer(initialCapacity)];
+  var buffer = Buffer.isBuffer(initialCapacity) ? initialCapacity : new Buffer(initialCapacity || 512);
+  this.buffers = [buffer];
+
   this.writeIndex = 0;
   this.length = 0;
-};
+}
 
 /* Append a (subsequence of a) Buffer */
 BufferBuilder.prototype.appendBuffer = function(source) {
@@ -50,7 +51,7 @@ function makeAppender(encoder, size) {
     }
     
     return this;
-  }
+  };
 }
 
 BufferBuilder.prototype.appendUInt8 = makeAppender(Buffer.prototype.writeUInt8, 1);
